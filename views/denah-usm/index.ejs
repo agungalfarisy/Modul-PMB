@@ -1,0 +1,141 @@
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-header">
+                <div class="row align-items-end" style="margin-bottom: 20px; margin-top: 30px; margin-left: 7px;">
+                    <div class="col-lg-8">
+                            <div class="page-header-breadcrumb">
+                            <h4>Denah Tempat Duduk USM</h4>
+                            <ul class="breadcrumb-title">
+                                <li class="breadcrumb-item">
+                                    <a href="..\..\index.php"><i class="fa fa-home"></i> Home</a>
+                                </li>
+                                <li class="breadcrumb-item"><a href="#!">Denah Tempat Duduk USM</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <!-- Material tab card start -->
+                    
+                    <div class="card user-card">
+
+                        <div class="card-block groups-contact">   
+                            <h4 class="sub-title">DENAH TEMPAT DUDUK USM</h4>                       
+                            <div class="row m-b-20">
+                                <div class="col-md-8">
+                                    <h5 class="card-header-text" style="font-weight: bold;"></h5>
+                                    <h5 style="font-weight: bold;">PILIH JENIS FORMULIR</h5>
+                                </div>
+                            </div>
+
+                            <form> 
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">Periode USM</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" placeholder="00001" readonly="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">Jenis Formulir</label>
+                                    <div class="col-sm-10">
+                                        <select name="select" class="form-control">
+                                            <option value="opt1">PILIH SALAH SATU</option>
+                                            <option value="opt2">Type 2</option>
+                                            <option value="opt3">Type 3</option>
+                                            <option value="opt4">Type 4</option>
+                                            <option value="opt5">Type 5</option>
+                                            <option value="opt6">Type 6</option>
+                                            <option value="opt7">Type 7</option>
+                                            <option value="opt8">Type 8</option>
+                                        </select>
+                                    </div>
+                                </div>          
+                            </form>
+
+                            <button type="button" style="float: right;" class="btn btn-primary waves-effect waves-light jual-formulir" onclick="_gaq.push(['_trackEvent', 'example', 'try', 'jual-formulir']);"><i class="fa fa-search"></i> TAMPILKAN</button>
+
+                        </div>
+
+                        <div class="card-block groups-contact">
+
+                        </div>
+                    </div>
+
+                    <div class="md-modal md-effect-1" id="resetPasswordPMB">
+                        <div class="md-content">
+                            <h3 class="text-center" style="background: #01a9ac;"><i class="fa fa-refresh"></i> UBAH PASSWORD</h3>
+
+                            <div class="row m-b-20">
+
+                                <div class="col-sm-12 col-lg-4">
+                                    <img class="img-fluid logoUnpas" src="..\..\foundations\adminity\assets\images\Logo-unpas.png" alt="round-img">
+                                    <h4 class="text-center" style="margin-top: 12px; margin-bottom: 15px;">PMB UNPAS</h4>
+                                </div>
+
+                                <div class="col-sm-12 col-lg-8">
+
+                                    <div class="form-group form-primary">
+                                        <input type="password" name="password" class="form-control" required="" id="inputPasswordLama" placeholder="Masukkan Password Lama...">
+                                        <span class="form-bar"></span>
+                                    </div>
+
+                                    <div class="form-group form-primary">
+                                        <input type="password" name="password" class="form-control" required="" id="inputPasswordBaru" placeholder="Masukkan Password Baru...">
+                                        <span class="form-bar"></span>
+                                    </div>
+
+                                    <div class="form-group form-primary">
+                                        <input type="password" name="password" class="form-control" required="" id="konfirmasiPassword" placeholder="Konfirmasi Password Baru...">
+                                        <span class="form-bar"></span>
+                                    </div>
+
+                                    <div class="row m-t-25 text-left">
+                                    <div class="col-12">
+                                        <div class="checkbox-fade fade-in-primary">
+                                            <label>
+                                                <input type="checkbox" value="" onclick="myFunctionUbahPassword()">
+                                                <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                                <span class="text-inverse">Tampilkan Password</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    </div>
+
+                                    <div class="row m-t-30">
+                                        <div class="col-md-12">
+                            
+                                            <button type="button" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20 ubah-password" data-dismiss="md-modal" aria-label="Close" onclick="_gaq.push(['_trackEvent', 'example', 'try', 'ubah-password']);"><h5>UBAH PASSWORD</h5></button>  
+
+                                            <button type="button" class="btn btn-secondary mobtn btn-md btn-block waves-effect text-center m-b-20 md-close"><h5>KEMBALI</h5></button>  
+                                                
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md-overlay"></div>
+                    <!-- Material tab card end -->
+
+                    <!-- Modal CETAK PERSYARATAN PMB-->      
+                    <div class="modal fade" id="cetakPersyaratanPMB" tabindex="-1" role="dialog">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <embed src="..\..\foundations\adminity\assets\pdf\persyaratan pmb.pdf" width="100%" height="600"></embed>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END CETAK PERSYARATAN PMB-->
+                </div>
+            </div>
+
+            <!-- Main-body end -->
+        </div>
+    </div>
+</div>

@@ -1,0 +1,288 @@
+<div class="pcoded-content">
+  <div class="pcoded-inner-content">
+    <!-- Main-body start -->
+    <div class="main-body">
+
+      <div class="page-header">
+          <div class="row align-items-end" style="margin-bottom: 20px; margin-top: 30px; margin-left: 7px;">
+              <div class="col-lg-8">
+                    <div class="page-header-breadcrumb">
+                      <h4>Penjualan Formulir</h4>
+                      <ul class="breadcrumb-title">
+                          <li class="breadcrumb-item">
+                              <a href="..\..\index.php"><i class="fa fa-home"></i> Home</a>
+                          </li>
+                          <li class="breadcrumb-item"><a href="#!">Penjualan Formulir</a>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <!-- Material tab card start --> 
+          <div class="card user-card">
+
+            <div class="card-block groups-contact">  
+                <h4 class="sub-title">PENJUALAN FORMULIR</h4>                        
+                <div class="row m-b-20">
+                  <div class="col-md-8">
+                    <h5 class="card-header-text" style="font-weight: bold;"></h5>
+                    <h5 style="font-weight: bold;">Universitas Demo</h5>
+                  </div>
+                </div>
+                <form action="/penjualan-form" method="post">
+                <div class="input-group">
+                    <select name="keyword" class="form-control form-control-inverse">
+                        <option value="Semua">PILIH JENIS FORMULIR</option>
+                        <% dataPenjualanForm.forEach((val) => { %>  
+                        <option value="<%= val['PMBFormulirID']  %>"><%= val['Nama']  %></option>
+                        <% }); %> 
+                    </select>
+                    <button type="submit" class="input-group-addon"><i class="icofont icofont-search-alt-1"></i></button>
+                </div>          
+                </form>
+
+                <ul class="list-group">
+                    <li class="list-group-item justify-content-between" style="font-weight: bold;">
+                        Periode/Gelombang : 
+                        <span class="badge badge-primary badge-pill">00001 - Testing new</span>
+                    </li>
+                    <li class="list-group-item justify-content-between" style="font-weight: bold;">
+                        Jumlah Terjual : 
+                        <span class="badge badge-success badge-pill">0</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card-block groups-contact">
+            </div>
+          </div>
+
+          <div class="md-modal md-effect-1" id="resetPasswordPMB">
+            <div class="md-content">
+
+                    <h3 class="text-center" style="background: #01a9ac;"><i class="fa fa-refresh"></i> UBAH PASSWORD</h3>
+
+                            <div class="row m-b-20">
+
+                            <div class="col-sm-12 col-lg-4">
+                                    <img class="img-fluid logoUnpas" src="..\..\foundations\adminity\assets\images\Logo-unpas.png" alt="round-img">
+                                    <h4 class="text-center" style="margin-top: 12px; margin-bottom: 15px;">PMB UNPAS</h4>
+                            </div>
+
+                            <div class="col-sm-12 col-lg-8">
+
+                                      <div class="form-group form-primary">
+                                        <input type="password" name="password" class="form-control" required="" id="inputPasswordLama" placeholder="Masukkan Password Lama...">
+                                        <span class="form-bar"></span>
+                                    </div>
+
+                                    <div class="form-group form-primary">
+                                        <input type="password" name="password" class="form-control" required="" id="inputPasswordBaru" placeholder="Masukkan Password Baru...">
+                                        <span class="form-bar"></span>
+                                    </div>
+
+                                    <div class="form-group form-primary">
+                                        <input type="password" name="password" class="form-control" required="" id="konfirmasiPassword" placeholder="Konfirmasi Password Baru...">
+                                        <span class="form-bar"></span>
+                                    </div>
+
+                                    <div class="row m-t-25 text-left">
+                                    <div class="col-12">
+                                        <div class="checkbox-fade fade-in-primary">
+                                            <label>
+                                                <input type="checkbox" value="" onclick="myFunctionUbahPassword()">
+                                                <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                                <span class="text-inverse">Tampilkan Password</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    </div>
+
+                                    <div class="row m-t-30">
+                                        <div class="col-md-12">
+                          
+                                            <button type="button" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20 ubah-password" data-dismiss="md-modal" aria-label="Close" onclick="_gaq.push(['_trackEvent', 'example', 'try', 'ubah-password']);"><h5>UBAH PASSWORD</h5></button>  
+
+                                            <button type="button" class="btn btn-secondary mobtn btn-md btn-block waves-effect text-center m-b-20 md-close"><h5>KEMBALI</h5></button>  
+                                                
+                                        </div>
+                                    </div>
+
+                            </div>
+                </div>
+
+            </div>
+          </div>
+          <div class="md-overlay"></div>
+          <!-- Material tab card end -->
+
+
+          <!-- start tab formulir -->
+          <div class="card user-card">
+                <div class="card-block tab-icon">
+                            
+                  <!-- Nav tabs -->
+                  <ul class="nav nav-tabs md-tabs tabs-penjualan-formulir" role="tablist">
+                      <li class="nav-item">
+                          <a class="nav-link" href="/penjualan-form" role="tab" aria-expanded="true"><i class="fa fa-calculator"></i>Formulir Terjual</a>
+                          <div class="slide"></div>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="/penjualan-form/jual-form" aria-expanded="false"><i class="fa fa-money"></i>Jual Formulir</a>
+                          <div class="slide"></div>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="/penjualan-form/edit-kwitansi" aria-expanded="false"><i class="fa fa-pencil-square-o"></i>Edit Kwitansi</a>
+                          <div class="slide"></div>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link active" href="/penjualan-form/daftar-form" aria-expanded="false"><i class="fa fa-plus-square-o"></i>Daftar Form</a>
+                          <div class="slide"></div>
+                      </li>
+                  </ul>
+                </div>
+          </div>
+
+          <div class="card user-card">
+              <div class="card-block tab-icon">
+                  <!-- Row start -->
+                  <div class="row">
+                      <div class="col-lg-12 col-xl-12">
+                          <!-- Tab panes -->
+                          <div class="tab-pane" id="daftarFormulir" role="tabpanel" aria-expanded="false">
+
+                            <h5 style="font-weight: bold;">Filter Pencarian Formulir</h5>
+                              <h4 class="sub-title"></h4>
+
+                                <form> 
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Tanggal Formulir</label>
+                                        <div class="col-sm-10">
+                                            <input class="form-control" type="date">
+                                        </div>
+                                    </div>
+                                    
+                                    <p style="font-weight: bold;">Cari Formulir Berdasarkan (PILIH SALAH SATU)</p>
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Nomor Kwitansi</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" placeholder="Masukkan Nomor Kwitansi...">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Bukti Setoran</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" placeholder="Masukkan Bukti Setoran...">
+                                        </div>
+                                    </div>      
+                                </form>
+
+                                <button type="button" style="float: right;" class="btn btn-primary waves-effect waves-light jual-formulir" onclick="_gaq.push(['_trackEvent', 'example', 'try', 'jual-formulir']);"><i class="fa fa-search"></i> TAMPILKAN FORMULIR</button>
+
+                    <!-- start HASIL PENCARIAN FORMULIR -->
+
+                                    <div class="dt-responsive table-responsive">
+
+                                        <table id="button-select" class="table table-striped table-bordered nowrap dataTable" role="grid" aria-describedby="button-select_info" style="text-align: center;">
+                                            <thead>
+                                                <tr role="row">
+                                                    <th tabindex="0" aria-controls="button-select" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 50px; text-align: center;">
+                                                        NO
+                                                    </th>     
+                                                    <th tabindex="0" aria-controls="button-select" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 50px; text-align: center;">
+                                                        Gelombang/Periode
+                                                    </th>
+                                                      <th tabindex="0" aria-controls="button-select" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 50px; text-align: center;">
+                                                        Tanggal
+                                                    </th>
+                                                    <th tabindex="0" aria-controls="button-select" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 50px; text-align: center;">
+                                                        Bukti Setoran
+                                                    </th>
+                                                    <th tabindex="0" aria-controls="button-select" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 50px; text-align: center;">
+                                                        Pembeli
+                                                    </th>
+                                                    <th tabindex="0" aria-controls="button-select" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 50px; text-align: center;">
+                                                        Formulir
+                                                    </th>
+                                                    <th tabindex="0" aria-controls="button-select" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 50px; text-align: center;">
+                                                        Harga
+                                                    </th>
+                                                    <th tabindex="0" aria-controls="button-select" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 50px; text-align: center;">
+                                                        Keterangan
+                                                    </th>
+                                                    <th tabindex="0" aria-controls="button-select" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 50px; text-align: center;">
+                                                        Aksi
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                  
+                                              <tr role="row" class="odd">
+                                                  <td style="white-space: nowrap; width: 1%;"></td>
+                                                  <td></td>
+                                                  <td></td>
+                                                  <td></td>
+                                                  <td></td>
+                                                  <td></td>
+                                                  <td></td>
+                                                  <td></td>
+                                                  <td style="white-space: nowrap; width: 1%;">
+                                                      <div class="tabledit-toolbar btn-toolbar" style="text-align: left;" align="center">
+                                                      <div class="btn-group btn-group-sm" style="float: none;">      
+                                                          <button type="button" class="tabledit-delete-button btn btn-danger waves-effect waves-light batalkan-kwitansi" style="float: none;margin: 5px;" onclick="_gaq.push(['_trackEvent', 'example', 'try', 'batalkan-kwitansi']);"><i class="fa fa-times-circle"></i>BATALKAN KWITANSI</span>
+                                                          </button>
+                                                      </div>
+                                                      </div>
+                                                  </td>
+                                              </tr>
+                                            </tbody>
+                                        </table>
+
+                                              <ul class="pagination" style="float: right;">
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="#" aria-label="Previous">
+                                                            <span aria-hidden="true">«</span>
+                                                            <span class="sr-only">Previous</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                                    <li class="page-item" aria-expanded="false"><a class="page-link" href="#">2</a></li>
+                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="#" aria-label="Next">
+                                                            <span aria-hidden="true">»</span>
+                                                            <span class="sr-only">Next</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                    </div>                                                              
+            <!-- end HASIL PENCARIAN FORMULIR -->
+
+                        </div>
+                      </div>
+                  </div>
+                  <!-- Row end -->
+              </div>
+          </div>
+          <!-- end tab formulir -->
+
+          <!-- Modal CETAK PERSYARATAN PMB-->      
+          <div class="modal fade" id="cetakPersyaratanPMB" tabindex="-1" role="dialog">
+              <div class="modal-dialog modal-lg" role="document">
+                  <div class="modal-content">
+                      <embed src="..\..\foundations\adminity\assets\pdf\persyaratan pmb.pdf" width="100%" height="600"></embed>
+                  </div>
+              </div>
+          </div>
+          <!-- END CETAK PERSYARATAN PMB-->
+        </div>
+      </div>
+
+    <!-- Main-body end -->
+    </div>
+  </div>
+</div>
